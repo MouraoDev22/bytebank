@@ -31,10 +31,10 @@ elementoFormulario.addEventListener('submit', event => {
         return;
     }
     ;
-    if (tipoTransacao === 'Depósito') {
+    if (tipoTransacao === TipoTransacao.DEPOSITO) {
         saldo += valor;
     }
-    else if (tipoTransacao === 'Transferência' || tipoTransacao === 'Pagamento de Boleto') {
+    else if (tipoTransacao === TipoTransacao.TRANSFERENCIA || tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO) {
         saldo -= valor;
     }
     else {
@@ -42,6 +42,9 @@ elementoFormulario.addEventListener('submit', event => {
         return;
     }
     ;
+    if (!elementoSaldo)
+        throw new Error('Elemento saldo não encontrado');
+    elementoSaldo.textContent = `R$ ${saldo.toFixed(2)}`;
     const novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
@@ -50,10 +53,3 @@ elementoFormulario.addEventListener('submit', event => {
     console.log(novaTransacao);
     elementoFormulario.reset();
 });
-var TipoTransacao;
-(function (TipoTransacao) {
-    TipoTransacao["DEPOSITO"] = "Dep\u00F3sito";
-    TipoTransacao["TRANSFERENCIA"] = "Transfer\u00EAncia";
-    TipoTransacao["PAGAMENTO_BOLETO"] = "Pagamento de Boleto";
-})(TipoTransacao || (TipoTransacao = {}));
-;
