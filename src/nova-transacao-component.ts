@@ -1,10 +1,3 @@
-{
-let saldo: number = 3000;
-
-const elementoSaldo: HTMLElement | null = document.querySelector<HTMLElement>('.saldo-valor .valor');
-if (!elementoSaldo) throw new Error('Elemento saldo não encontrado');
-elementoSaldo.textContent = `R$ ${saldo.toFixed(2)}`;
-
 const elementoFormulario: HTMLFormElement | null = document.querySelector<HTMLFormElement>('.block-nova-transacao form');
 if (!elementoFormulario) throw new Error('Elemento formulário não encontrado');
 elementoFormulario.addEventListener('submit', event => {
@@ -47,8 +40,6 @@ elementoFormulario.addEventListener('submit', event => {
         return;
     };
 
-    elementoSaldo.textContent = `R$ ${saldo.toFixed(2)}`;
-
     const novaTransacao: Transacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
@@ -71,4 +62,3 @@ enum TipoTransacao {
     TRANSFERENCIA = 'Transferência',
     PAGAMENTO_BOLETO = 'Pagamento de Boleto',
 };
-}

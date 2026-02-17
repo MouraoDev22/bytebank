@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bytebank</title>
     <link rel="stylesheet" href="css/app.css" type="text/css" />
-    <script src="./js/bytebank.js" defer></script>
+    <script src="./js/saldo-component.js" type="module" defer></script>
+    <script src="./js/nova-transacao-component.js" type="module" defer></script>
 </head>
 <body>
     <header class="topo container-padding flex">
@@ -46,7 +47,7 @@
                 <h2>Nova transação</h2>
                 <form action="" method="post" novalidate>
                     <div class="campo">
-                        <select name="tipoTransacao" id="tipoTransacao" class="campo-input" required>
+                        <select name="tipoTransacao" id="tipoTransacao" class="campo-input" title="tipoTransacao" required>
                             <option value="">Selecione o tipo de transação</option>
                             <option value="Depósito">Depósito</option>
                             <option value="Transferência">Transferência</option>
