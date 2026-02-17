@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "./dist/js/",
+        "noEmitOnError": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
