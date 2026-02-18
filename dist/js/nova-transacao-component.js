@@ -44,7 +44,7 @@ elementoFormulario.addEventListener('submit', event => {
     ;
     if (!elementoSaldo)
         throw new Error('Elemento saldo não encontrado');
-    elementoSaldo.textContent = saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    elementoSaldo.textContent = formatarMoeda(saldo);
     const novaTransacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
