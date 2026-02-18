@@ -1,4 +1,4 @@
-let saldo: number = 3000;
+let saldo: number = 10000;
 
 const elementoSaldo: HTMLElement | null = document.querySelector<HTMLElement>('.saldo-valor .valor');
 if (!elementoSaldo) throw new Error('Elemento saldo não encontrado');

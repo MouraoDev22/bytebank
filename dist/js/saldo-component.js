@@ -1,5 +1,5 @@
 "use strict";
-let saldo = 3000;
+let saldo = 10000;
 const elementoSaldo = document.querySelector('.saldo-valor .valor');
 if (!elementoSaldo)
     throw new Error('Elemento saldo não encontrado');
