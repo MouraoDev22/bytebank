@@ -1,13 +1,13 @@
 import Conta from "../types/Conta.js";
 import SaldoComponent from "./saldo-component.js";
-try {
-    const elementoFormulario = document.querySelector('.block-nova-transacao form');
-    if (!elementoFormulario)
-        throw new Error('Elemento formulário não encontrado');
-    elementoFormulario.addEventListener('submit', event => {
+const elementoFormulario = document.querySelector('.block-nova-transacao form');
+if (!elementoFormulario)
+    throw new Error('Elemento formulário não encontrado');
+elementoFormulario.addEventListener('submit', event => {
+    try {
         event.preventDefault();
         if (!elementoFormulario.checkValidity()) {
-            throw new Error('Por favor, preencha todos os campos da transação corretamente.');
+            throw new Error('Formulário não preenchido! Por favor, preencha todos os campos da transação corretamente.');
         }
         ;
         const inputTipoTransacao = elementoFormulario.querySelector('#tipoTransacao');
@@ -38,9 +38,9 @@ try {
         Conta.registrarTransacao(novaTransacao);
         SaldoComponent.atualizar();
         elementoFormulario.reset();
-    });
-}
-catch (error) {
-    alert(error.message);
-}
-;
+    }
+    catch (error) {
+        alert(error.message);
+    }
+    ;
+});
