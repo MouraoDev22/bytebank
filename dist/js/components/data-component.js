@@ -14,7 +14,7 @@ renderizarData();
 export function renderizarData() {
     if (!elementoDataAcesso)
         throw new Error('Elemento data de acesso não encontrado');
-    elementoDataAcesso.textContent = formatarData(Conta.getDataAcesso());
+    elementoDataAcesso.textContent = formatarData(Conta.getDataAcesso(), FormatoData.DIA_SEMANA_DIA_MES_ANO);
 }
 ;
 export default DataComponent;
