@@ -1,25 +1,21 @@
-import { formatarMoeda, formatarData } from "../utils/formatters.js";
-import { FormatoData } from "../types/FormatoData.js"; 
-
-let saldo: number = 10000;
+import { formatarMoeda } from "../utils/formatters.js";
+import Conta from "../types/Conta.js"; 
 
 const elementoSaldo: HTMLElement | null = document.querySelector<HTMLElement>('.saldo-valor .valor');
 if (!elementoSaldo) throw new Error('Elemento saldo não encontrado');
-elementoSaldo.textContent = formatarMoeda(saldo);
+elementoSaldo.textContent = formatarMoeda(Conta.getSaldo());
 
-const elementoDataAcesso: HTMLElement | null = document.querySelector<HTMLElement>('.block-saldo time');
-if (!elementoDataAcesso) throw new Error('Elemento data de acesso não encontrado');
-elementoDataAcesso.textContent = formatarData(new Date(), FormatoData.DIA_SEMANA_DIA_MES_ANO);
-
-atualizarSaldo(saldo);
-
-export function getSaldo(): number {
-    return saldo;
+const SaldoComponent: any = {
+    atualizar(): void {
+        renderizarSaldo()
+    }
 };
 
-export function atualizarSaldo(novoSaldo: number): void {
-    saldo = novoSaldo;
-    
+renderizarSaldo();
+
+export function renderizarSaldo(): void {    
     if (!elementoSaldo) throw new Error('Elemento saldo não encontrado');
-    elementoSaldo.textContent = formatarMoeda(saldo);
+    elementoSaldo.textContent = formatarMoeda(Conta.getSaldo());
 };
+
+export default SaldoComponent;
