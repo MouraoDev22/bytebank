@@ -8,7 +8,7 @@ elementoDataAcesso.textContent = formatarData(Conta.getDataAcesso(), FormatoData
 
 const DataComponent: any = {
     atualizar(): void {
-        renderizarData()
+    renderizarData()
     }
 };
 
