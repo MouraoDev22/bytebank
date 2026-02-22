@@ -1,5 +1,6 @@
 import Conta from "../types/Conta.js";
 import SaldoComponent from "./saldo-component.js";
+import ExtratoComponent from "./extrato-component.js";
 const elementoFormulario = document.querySelector('.block-nova-transacao form');
 if (!elementoFormulario)
     throw new Error('Elemento formulário não encontrado');
@@ -25,7 +26,7 @@ elementoFormulario.addEventListener('submit', (event) => {
             throw new Error('Valor inválido');
         }
         ;
-        let data = new Date(inputData.value);
+        let data = new Date(inputData.value + ' 00:00:00');
         if (isNaN(data.getTime())) {
             throw new Error('Data inválida');
         }
@@ -37,6 +38,7 @@ elementoFormulario.addEventListener('submit', (event) => {
         };
         Conta.registrarTransacao(novaTransacao);
         SaldoComponent.atualizar();
+        ExtratoComponent.atualizar();
         elementoFormulario.reset();
     }
     catch (error) {

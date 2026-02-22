@@ -2,6 +2,7 @@ import { Transacao } from "../types/Transacao.js";
 import { TipoTransacao } from "../types/TipoTransacao.js";
 import Conta from "../types/Conta.js";
 import SaldoComponent from "./saldo-component.js";
+import ExtratoComponent from "./extrato-component.js";
 
 const elementoFormulario: HTMLFormElement | null = document.querySelector<HTMLFormElement>('.block-nova-transacao form');
 if (!elementoFormulario) throw new Error('Elemento formulário não encontrado');
@@ -29,7 +30,7 @@ elementoFormulario.addEventListener('submit', (event: Event) => {
         throw new Error('Valor inválido');
         };
     
-        let data: Date = new Date(inputData.value);
+        let data: Date = new Date(inputData.value + ' 00:00:00');
         if (isNaN(data.getTime())) {
         throw new Error('Data inválida');
         };
@@ -42,6 +43,7 @@ elementoFormulario.addEventListener('submit', (event: Event) => {
 
         Conta.registrarTransacao(novaTransacao);
         SaldoComponent.atualizar();
+        ExtratoComponent.atualizar();
         elementoFormulario.reset();
     } catch(error: any) {
         alert(error.message);
