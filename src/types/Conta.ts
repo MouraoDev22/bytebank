@@ -1,6 +1,7 @@
 import { Transacao } from "./Transacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
+import { ResumoTransacoes } from "./ResumoTransacoes.js";
 
 let saldo: number = JSON.parse(localStorage.getItem('saldo') || '0');
 const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes') || '[]', (key: string, value: any) => {
@@ -11,7 +12,7 @@ const transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes') ||
     return value;
 });
 
-const Conta = {    
+const Conta: any = {    
     getSaldo(): number {
         return saldo;
     },
@@ -57,6 +58,37 @@ const Conta = {
         transacoes.push(novaTransacao);
         console.log(this.getGrupoTransacoes());
         localStorage.setItem('transacoes', JSON.stringify(transacoes));
+    },
+
+    resumirTransacoes(): void {
+        if (localStorage.getItem('resumoTransacoes')) {
+            localStorage.removeItem('resumoTransacoes');
+        };
+        
+        const resumoTransacoes: ResumoTransacoes = {
+            totalDepositos: 0,
+            totalTransferencias: 0,
+            totalPagamentosBoleto: 0,
+        };
+
+        const listaTransacoes: Transacao[] = structuredClone(transacoes);
+        const grupoDeposito: Transacao[] = listaTransacoes.filter((transacao: Transacao) => transacao.tipoTransacao === TipoTransacao.DEPOSITO);
+        const grupoTransferencia: Transacao[] = listaTransacoes.filter((transacao: Transacao) => transacao.tipoTransacao === TipoTransacao.TRANSFERENCIA);
+        const grupoPagamentoBoleto: Transacao[] = listaTransacoes.filter((transacao: Transacao) => transacao.tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO);
+        
+        for (const transacao of grupoDeposito) {
+            resumoTransacoes.totalDepositos += transacao.valor;
+        };
+
+        for (const transacao of grupoTransferencia) {
+            resumoTransacoes.totalTransferencias += transacao.valor;
+        };
+
+        for (const transacao of grupoPagamentoBoleto) {
+            resumoTransacoes.totalPagamentosBoleto += transacao.valor;
+        };
+
+        localStorage.setItem('resumoTransacoes', JSON.stringify(resumoTransacoes));
     }
 };
 

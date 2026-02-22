@@ -37,6 +37,7 @@ elementoFormulario.addEventListener('submit', (event) => {
             data: data,
         };
         Conta.registrarTransacao(novaTransacao);
+        Conta.resumirTransacoes();
         SaldoComponent.atualizar();
         ExtratoComponent.atualizar();
         elementoFormulario.reset();

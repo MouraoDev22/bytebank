@@ -13,6 +13,7 @@ const ExtratoComponent: any = {
 };
 
 renderizarExtrato();
+Conta.resumirTransacoes();
 
 function renderizarExtrato(): void {
     const grupoTransacoes: GrupoTransacao[] = Conta.getGrupoTransacoes();

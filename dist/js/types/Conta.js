@@ -49,6 +49,34 @@ const Conta = {
         transacoes.push(novaTransacao);
         console.log(this.getGrupoTransacoes());
         localStorage.setItem('transacoes', JSON.stringify(transacoes));
+    },
+    resumirTransacoes() {
+        if (localStorage.getItem('resumoTransacoes')) {
+            localStorage.removeItem('resumoTransacoes');
+        }
+        ;
+        const resumoTransacoes = {
+            totalDepositos: 0,
+            totalTransferencias: 0,
+            totalPagamentosBoleto: 0,
+        };
+        const listaTransacoes = structuredClone(transacoes);
+        const grupoDeposito = listaTransacoes.filter((transacao) => transacao.tipoTransacao === TipoTransacao.DEPOSITO);
+        const grupoTransferencia = listaTransacoes.filter((transacao) => transacao.tipoTransacao === TipoTransacao.TRANSFERENCIA);
+        const grupoPagamentoBoleto = listaTransacoes.filter((transacao) => transacao.tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO);
+        for (const transacao of grupoDeposito) {
+            resumoTransacoes.totalDepositos += transacao.valor;
+        }
+        ;
+        for (const transacao of grupoTransferencia) {
+            resumoTransacoes.totalTransferencias += transacao.valor;
+        }
+        ;
+        for (const transacao of grupoPagamentoBoleto) {
+            resumoTransacoes.totalPagamentosBoleto += transacao.valor;
+        }
+        ;
+        localStorage.setItem('resumoTransacoes', JSON.stringify(resumoTransacoes));
     }
 };
 function depositar(valor) {

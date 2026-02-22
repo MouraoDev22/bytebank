@@ -10,6 +10,7 @@ const ExtratoComponent = {
     }
 };
 renderizarExtrato();
+Conta.resumirTransacoes();
 function renderizarExtrato() {
     const grupoTransacoes = Conta.getGrupoTransacoes();
     if (!elementoRegistroTransacoesExtrato)
