@@ -3,7 +3,7 @@ import SaldoComponent from "./saldo-component.js";
 const elementoFormulario = document.querySelector('.block-nova-transacao form');
 if (!elementoFormulario)
     throw new Error('Elemento formulário não encontrado');
-elementoFormulario.addEventListener('submit', event => {
+elementoFormulario.addEventListener('submit', (event) => {
     try {
         event.preventDefault();
         if (!elementoFormulario.checkValidity()) {
