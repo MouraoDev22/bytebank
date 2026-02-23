@@ -53,4 +53,4 @@ function renderizarExtrato(): void {
     elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 };
 
-export default ExtratoComponent;
+export default ExtratoComponent

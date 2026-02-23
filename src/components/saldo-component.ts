@@ -9,6 +9,7 @@ elementoSaldo.textContent = formatarMoeda(Conta.getSaldo());
 const SaldoComponent: SaldoComponent = {
     atualizar(): void {
         renderizarSaldo()
+        return;
     }
 };
 
@@ -17,6 +18,7 @@ renderizarSaldo();
 export function renderizarSaldo(): void {    
     if (!elementoSaldo) throw new Error('Elemento saldo não encontrado');
     elementoSaldo.textContent = formatarMoeda(Conta.getSaldo());
+    return;
 };
 
 export default SaldoComponent;

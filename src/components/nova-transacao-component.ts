@@ -49,4 +49,5 @@ elementoFormulario.addEventListener('submit', (event: Event) => {
     } catch(error: any) {
         alert(error.message);
     };
+    return;
 });

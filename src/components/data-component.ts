@@ -20,4 +20,4 @@ export function renderizarData(): void {
     elementoDataAcesso.textContent = formatarData(Conta.getDataAcesso(), FormatoData.DIA_SEMANA_DIA_MES_ANO);
 };
 
-export default DataComponent;
+export default DataComponent

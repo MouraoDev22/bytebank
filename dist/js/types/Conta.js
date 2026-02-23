@@ -49,6 +49,7 @@ const Conta = {
         transacoes.push(novaTransacao);
         console.log(this.getGrupoTransacoes());
         localStorage.setItem('transacoes', JSON.stringify(transacoes));
+        return;
     },
     resumirTransacoes() {
         if (localStorage.getItem('resumoTransacoes')) {
@@ -77,6 +78,7 @@ const Conta = {
         }
         ;
         localStorage.setItem('resumoTransacoes', JSON.stringify(resumoTransacoes));
+        return;
     }
 };
 function depositar(valor) {
@@ -85,6 +87,7 @@ function depositar(valor) {
     }
     saldo += valor;
     localStorage.setItem('saldo', JSON.stringify(saldo));
+    return;
 }
 ;
 function debitar(valor) {
@@ -97,6 +100,7 @@ function debitar(valor) {
     ;
     saldo -= valor;
     localStorage.setItem('saldo', JSON.stringify(saldo));
+    return;
 }
 ;
 export default Conta;
