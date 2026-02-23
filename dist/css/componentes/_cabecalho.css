@@ -2,12 +2,19 @@
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     font-size: var(--fonte-t3);
-    padding-block: 30px;
-    margin-bottom: 24px;
+    padding-block: 1.875rem;
+    margin-bottom: 1.5rem;
 
     .usuario {
         & span {
-            margin-right: 40px;
+            margin-right: 2.5rem;
         }
     }
+}
+
+.dark-mode-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    margin-left: 1.5rem;
 }

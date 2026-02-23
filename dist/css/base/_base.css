@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
+    /* Fonte */
     --fonte-padrao: 'Inter', sans-serif;
-    --fonte-tamanho-padrao: 16px;
-    --fonte-t1: 25px;
-    --fonte-t2: 20px;
-    --fonte-t3: 13px;
+    --fonte-tamanho-padrao: 1rem;
+    --fonte-t1: 1.5625rem;
+    --fonte-t2: 1.25rem;
+    --fonte-t3: 0.8125rem;
+    
+    /* Tema Claro (Padrão) */
     --cor-primaria: #000;
     --cor-secundaria: #47A138;
     --cor-tercearia: #CBCBCB;
     --cor-quaternaria: #E4EDE3;
-    --largura-padrao: 1200px;
+    --cor-fundo-component: #F5F5F5;
+    
+    /* Tema Escuro */
+    --cor-primaria-dark: #FFF;
+    --cor-secundaria-dark: #47A138;
+    --cor-tercearia-dark: #2A2A2A;
+    --cor-quaternaria-dark: #1F2A1F;
+    --cor-fundo-component-dark: #121212;
+    
+    --largura-padrao: 75rem;
 }
 
 *, ::before, ::after {
@@ -24,7 +36,7 @@ html {
 
 html, body {
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -36,7 +48,7 @@ body {
     line-height: 1.5;
     background-color: var(--cor-quaternaria);
     overflow-x: hidden;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
 }
 
 a {
@@ -59,9 +71,9 @@ a {
     padding-left: calc((100% - var(--largura-padrao)) / 2);
     padding-right: calc((100% - var(--largura-padrao)) / 2);
 
-    @media (max-width: 1200px) {
-        padding-left: 20px;
-        padding-right: 20px;
+    @media (max-width: 75rem) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }
 
