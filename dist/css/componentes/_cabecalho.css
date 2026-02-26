@@ -5,6 +5,14 @@
     padding-block: 1.875rem;
     margin-bottom: 1.5rem;
 
+    & .flex {
+        gap: 1rem;
+
+        @media (max-width: 30rem) {
+            justify-content: center;
+        }
+    }
+
     .usuario {
         & span {
             margin-right: 2.5rem;

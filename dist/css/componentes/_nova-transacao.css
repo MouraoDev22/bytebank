@@ -5,7 +5,8 @@
     background-image: url('../../images/nova-transacao-bg1.png'), url('../../images/nova-transacao-bg2.png'), url('../../images/nova-transacao-bg3.png');
     background-position: bottom left, bottom 1.4375rem right, top right;
     background-repeat: no-repeat;
-    background-color: var(--cor-tercearia);
+    background-color: var(--cor-fundo-component);
+    background-blend-mode: multiply;
     margin-top: 1.5rem;
 
     & h2 {

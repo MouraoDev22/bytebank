@@ -8,19 +8,13 @@
     --fonte-t2: 1.25rem;
     --fonte-t3: 0.8125rem;
     
-    /* Tema Claro (Padrão) */
-    --cor-primaria: #000;
+    /* Tema */
+    --cor-primaria: #242526;
     --cor-secundaria: #47A138;
-    --cor-tercearia: #CBCBCB;
-    --cor-quaternaria: #E4EDE3;
-    --cor-fundo-component: #F5F5F5;
-    
-    /* Tema Escuro */
-    --cor-primaria-dark: #FFF;
-    --cor-secundaria-dark: #47A138;
-    --cor-tercearia-dark: #2A2A2A;
-    --cor-quaternaria-dark: #1F2A1F;
-    --cor-fundo-component-dark: #121212;
+    --cor-tercearia: #B0B3B8;
+    --cor-quaternaria: #18191A;
+    --cor-fundo-component: #242526;
+    --cor-texto: #E4E6EB;
     
     --largura-padrao: 75rem;
 }
@@ -43,16 +37,15 @@ html, body {
 body {
     font-family: var(--fonte-padrao);
     font-size: var(--fonte-tamanho-padrao);
-    color: var(--cor-primaria);
+    color: var(--cor-texto);
     font-weight: 400;
     line-height: 1.5;
     background-color: var(--cor-quaternaria);
     overflow-x: hidden;
-    padding-bottom: 1.5rem;
 }
 
 a {
-    color: var(--cor-primaria);
+    color: var(--cor-texto);
     text-decoration: none;
 
     &:hover {
