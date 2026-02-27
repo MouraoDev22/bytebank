@@ -4,6 +4,8 @@ Bem-vindo ao **Bytebank**! Este projeto é uma aplicação de banco digital simp
 
 O projeto foi construído durante o curso **"TypeScript na prática: Implemente um Projeto Completo com TypeScript e Módulos"**, da Alura. O foco foi criar uma aplicação robusta, organizada e segura.
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78f0ac8d-1813-44ed-8675-5c5b054a4fde" />
+
 ---
 
 ### 🚀 Minha Jornada de Aprendizado
@@ -46,7 +48,7 @@ Você pode testar a aplicação de duas formas:
 
 A aplicação está disponível online! Basta clicar no link abaixo:
 
-👉 **[Acesse o ByteBank aqui](https://MouraoDev22.io/bytebank/)**
+👉 **[Acesse o ByteBank aqui](https://mouraodev22.github.io/bytebank/)**
 
 #### 2. Execução Local
 
