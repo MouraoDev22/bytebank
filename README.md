@@ -46,7 +46,7 @@ Você pode testar a aplicação de duas formas:
 
 A aplicação está disponível online! Basta clicar no link abaixo:
 
-👉 **[Acesse o ByteBank aqui](https://www.google.com/search?q=https://teu-usuario.github.io/bytebank/)**
+👉 **[Acesse o ByteBank aqui](https://MouraoDev22.io/bytebank/)**
 
 #### 2. Execução Local
 
