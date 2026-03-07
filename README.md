@@ -1,3 +1,5 @@
+<img width="1250" height="625" alt="Front-end-TypeScript na Prática" src="https://github.com/user-attachments/assets/c5aa6e14-fa9d-42bd-bea9-d2c4fa3c6d53" />
+
 # 🏦 Bytebank - Projeto de Banco Digital
 
 Bem-vindo ao **Bytebank**! Este projeto é uma aplicação de banco digital simples, desenvolvida para colocar em prática os fundamentos do **TypeScript**.
