@@ -3,7 +3,7 @@
         "target": "esnext",
         "module": "esnext",
         "moduleResolution": "node",
-        "outDir": "./dist/js/",
+        "outDir": "./docs/js/",
         "noEmitOnError": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true

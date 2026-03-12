@@ -1,4 +1,4 @@
-import Conta from "../types/Conta.js";
+import conta from "../types/Conta.js";
 import SaldoComponent from "./saldo-component.js";
 import ExtratoComponent from "./extrato-component.js";
 const elementoFormulario = document.querySelector('.block-nova-transacao form');
@@ -36,8 +36,8 @@ elementoFormulario.addEventListener('submit', (event) => {
             valor: valor,
             data: data,
         };
-        Conta.registrarTransacao(novaTransacao);
-        Conta.resumirTransacoes();
+        conta.registrarTransacao(novaTransacao);
+        conta.resumirTransacoes();
         SaldoComponent.atualizar();
         ExtratoComponent.atualizar();
         elementoFormulario.reset();

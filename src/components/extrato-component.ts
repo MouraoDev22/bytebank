@@ -1,4 +1,4 @@
-import Conta from "../types/Conta.js";
+import conta from "../types/Conta.js";
 import { GrupoTransacao } from "../types/GrupoTransacao.js";
 import { formatarMoeda, formatarData } from "../utils/formatters.js";
 import { FormatoData } from "../types/FormatoData.js";
@@ -13,10 +13,10 @@ const ExtratoComponent: any = {
 };
 
 renderizarExtrato();
-Conta.resumirTransacoes();
+conta.resumirTransacoes();
 
 function renderizarExtrato(): void {
-    const grupoTransacoes: GrupoTransacao[] = Conta.getGrupoTransacoes();
+    const grupoTransacoes: GrupoTransacao[] = conta.getGrupoTransacoes();
     
     if (!elementoRegistroTransacoesExtrato) throw new Error('Elemento registro de transações do extrato não encontrado');
     elementoRegistroTransacoesExtrato.innerHTML = '';
