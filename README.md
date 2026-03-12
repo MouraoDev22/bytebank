@@ -1,33 +1,61 @@
-# ByteBank
+<img width="1250" height="625" alt="Front-end-TypeScript na Prática" src="https://github.com/user-attachments/assets/c5aa6e14-fa9d-42bd-bea9-d2c4fa3c6d53" />
 
-Este é o projeto de uma aplicação de banco digital simples, desenvolvida como parte do meu aprendizado em TypeScript.
+# 🏦 Bytebank - Projeto de Banco Digital
 
-## Minha Jornada de Aprendizagem com TypeScript
+Bem-vindo ao **Bytebank**! Este projeto é uma aplicação de banco digital simples, desenvolvida para colocar em prática os fundamentos do **TypeScript**.
 
-Este projeto foi uma oportunidade para aplicar e aprofundar meus conhecimentos em TypeScript na prática. O principal objetivo era sair do campo teórico e aplicar os conceitos da linguagem em um projeto real, focado em:
+O projeto foi construído durante o curso **"TypeScript na prática: Implemente um Projeto Completo com TypeScript e Módulos"**, da Alura. O foco foi criar uma aplicação robusta, organizada e segura.
 
-*   **Tipagem Explícita:** Utilizar o sistema de tipos do TypeScript para declarar tipos para variáveis, parâmetros de funções e objetos, garantindo maior clareza e previsibilidade no código.
-*   **Controle de Qualidade:** Aproveitar a compilação estática para identificar erros em tempo de desenvolvimento, o que normalmente só seriam percebidos em tempo de execução com JavaScript puro. Isso resultou em um código mais limpo e com menos bugs.
-*   **Tratamento de Erros:** Implementar um tratamento de erros mais eficiente e seguro, aproveitando os recursos do TypeScript.
-*   **Robustez da Aplicação:** Construir uma aplicação mais sólida e de fácil manutenção, graças à segurança que os tipos proporcionam.
-*   **Módulos ES6:** Organizar o código de forma modular e reutilizável, utilizando a sintaxe de import/export do ES6.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/78f0ac8d-1813-44ed-8675-5c5b054a4fde" />
 
-## Funcionalidades
+---
 
-*   Visualização de saldo.
-*   Extrato de transações.
-*   Cadastro de novas transações (depósitos e transferências).
-*   Os dados são salvos localmente no navegador utilizando `localStorage`.
+### 🚀 Minha Jornada de Aprendizado
 
-## Tecnologias e Ferramentas Utilizadas (Tech Stack)
+Este projeto foi um marco importante para aprofundar meus conhecimentos técnicos. Durante o desenvolvimento, foquei em:
 
-*   **TypeScript:** Linguagem principal para o desenvolvimento da lógica da aplicação.
-*   **HTML5:** Estrutura da página.
-*   **CSS3:** Estilização dos componentes.
-*   **Módulos ES6:** Para a organização e modularização do código.
-*   **localStorage:** Para armazenamento de dados no navegador.
+* **Tipagem Explícita:** Utilizei o sistema de tipos para garantir que o código seja previsível e fácil de entender.
+* **Controle de Qualidade:** Aproveitei a compilação do TypeScript para identificar e corrigir erros antes mesmo da execução.
+* **Módulos ES6:** Organizei o código de forma modular, facilitando a manutenção e o reaproveitamento de lógica.
+* **Robustez:** Implementei tratamentos que tornam a aplicação mais sólida contra falhas comuns de JavaScript puro.
 
-## Como Executar
+---
 
-1.  Clone este repositório.
-2.  Abra o arquivo `index.html` (localizado na pasta `docs`) em seu navegador de preferência.
+### ✨ Funcionalidades
+
+A aplicação simula operações essenciais de um banco:
+
+* 💰 **Consulta de Saldo:** Visualização atualizada do saldo disponível.
+* 📜 **Extrato de Transações:** Histórico organizado de todas as movimentações.
+* 💸 **Novas Transações:** Cadastro de depósitos e transferências com validação.
+* 📱 **Interface Responsiva:** Design adaptável para proporcionar uma excelente experiência tanto em dispositivos móveis quanto em computadores.
+* 💾 **Persistência de Dados:** Uso do `localStorage` para que as informações não sumam ao atualizar a página.
+
+---
+
+### 🛠️ Tecnologias Utilizadas (Tech Stack)
+
+* **TypeScript:** Linguagem base para uma lógica segura e tipada.
+* **HTML5 & CSS3:** Estrutura e estilização da interface.
+* **Módulos ES6:** Organização modular do projeto.
+* **localStorage:** Armazenamento local no navegador.
+
+---
+
+### 🌐 Como Acessar
+
+Você pode testar a aplicação de duas formas:
+
+#### 1. GitHub Pages (Acesso Rápido)
+
+A aplicação está disponível online! Basta clicar no link abaixo:
+
+👉 **[Acesse o ByteBank aqui](https://mouraodev22.github.io/bytebank/)**
+
+#### 2. Execução Local
+
+Se preferir rodar o projeto na sua máquina:
+
+1. Clone este repositório: `git clone https://github.com/teu-usuario/bytebank.git`
+2. Navegue até a pasta `docs`.
+3. Abra o arquivo `index.html` no seu navegador de preferência.
