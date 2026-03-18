@@ -2,17 +2,18 @@ import { Transacao } from "./Transacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
 import { ResumoTransacoes } from "./ResumoTransacoes.js";
+import { Armazenador } from "./Armazenador.js";
 
 export class Conta {
     protected nome: string;
-    protected saldo: number = JSON.parse(localStorage.getItem('saldo') || '0');
-    private transacoes: Transacao[] = JSON.parse(localStorage.getItem('transacoes') || '[]', (key: string, value: any) => {
+    protected saldo: number = Armazenador.obter('saldo') || 0;
+    private transacoes: Transacao[] = Armazenador.obter(('transacoes'), (key: string, value: any) => {
         if (key === 'data') {
             return new Date(value);
         };
 
         return value;
-    });
+    }) || [];
 
     constructor(nome: string) {
         this.nome = nome;
@@ -66,7 +67,7 @@ export class Conta {
     
         this.transacoes.push(novaTransacao);
         console.log(this.getGrupoTransacoes());
-        localStorage.setItem('transacoes', JSON.stringify(this.transacoes));
+        Armazenador.salvar('transacoes', JSON.stringify(this.transacoes));
         return;
     };
     
@@ -98,7 +99,7 @@ export class Conta {
             resumoTransacoes.totalPagamentosBoleto += transacao.valor;
         };
     
-        localStorage.setItem('resumoTransacoes', JSON.stringify(resumoTransacoes));
+        Armazenador.salvar('resumoTransacoes', JSON.stringify(resumoTransacoes));
         return;
     };
     
@@ -108,7 +109,7 @@ export class Conta {
         }
     
         this.saldo += valor;
-        localStorage.setItem('saldo', JSON.stringify(this.saldo));
+        Armazenador.salvar('saldo', JSON.stringify(this.saldo));
         return;
     };
     
@@ -120,7 +121,7 @@ export class Conta {
         };
     
         this.saldo -= valor;
-        localStorage.setItem('saldo', JSON.stringify(this.saldo));
+        Armazenador.salvar('saldo', JSON.stringify(this.saldo));
         return;
     };
 };
