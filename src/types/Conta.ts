@@ -106,10 +106,6 @@ export class Conta {
     
     @ValidarDeposito
     protected depositar(valor: number): void {
-        if (valor <= 0) {
-            throw new Error('O valor a ser depositado deve ser maior que zero!');
-        };
-    
         this.saldo += valor;
         Armazenador.salvar('saldo', JSON.stringify(this.saldo));
         return;
