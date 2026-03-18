@@ -13,6 +13,10 @@ export class Conta {
         this.nome = nome;
     }
     ;
+    getTitular() {
+        return this.nome;
+    }
+    ;
     getSaldo() {
         return this.saldo;
     }
