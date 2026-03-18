@@ -2,8 +2,8 @@ import { Transacao } from "./Transacao.js";
 import { TipoTransacao } from "./TipoTransacao.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
 import { ResumoTransacoes } from "./ResumoTransacoes.js";
-import { Armazenador } from "./Armazenador.js";
-import { ValidarDebito, ValidarDeposito } from "./Decorators.js";
+import { Armazenador } from "../utils/Armazenador.js";
+import { ValidarDebito, ValidarDeposito } from "../utils/Decorators.js";
 
 export class Conta {
     protected nome: string;
