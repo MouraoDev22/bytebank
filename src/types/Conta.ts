@@ -3,6 +3,7 @@ import { TipoTransacao } from "./TipoTransacao.js";
 import { GrupoTransacao } from "./GrupoTransacao.js";
 import { ResumoTransacoes } from "./ResumoTransacoes.js";
 import { Armazenador } from "./Armazenador.js";
+import { ValidarDebito, ValidarDeposito } from "./Decorators.js";
 
 export class Conta {
     protected nome: string;
@@ -103,23 +104,19 @@ export class Conta {
         return;
     };
     
+    @ValidarDeposito
     protected depositar(valor: number): void {
         if (valor <= 0) {
             throw new Error('O valor a ser depositado deve ser maior que zero!');
-        }
+        };
     
         this.saldo += valor;
         Armazenador.salvar('saldo', JSON.stringify(this.saldo));
         return;
     };
     
+    @ValidarDebito
     protected debitar(valor: number): void {
-        if (valor <= 0) {
-            throw new Error('O valor a ser debitado deve ser maior que zero!');
-        } else if (valor > this.saldo) {
-            throw new Error('Saldo insuficiente!');
-        };
-    
         this.saldo -= valor;
         Armazenador.salvar('saldo', JSON.stringify(this.saldo));
         return;

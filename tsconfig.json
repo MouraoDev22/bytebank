@@ -5,6 +5,7 @@
         "moduleResolution": "node",
         "outDir": "./docs/js/",
         "noEmitOnError": true,
+        "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true
     },
