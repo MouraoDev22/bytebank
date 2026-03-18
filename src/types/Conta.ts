@@ -7,7 +7,7 @@ import { Armazenador } from "./Armazenador.js";
 export class Conta {
     protected nome: string;
     protected saldo: number = Armazenador.obter<number>('saldo') || 0;
-    private transacoes: Transacao[] = Armazenador.obter<Transacao[]>(('transacoes'), (key: string, value: any) => {
+    protected transacoes: Transacao[] = Armazenador.obter<Transacao[]>(('transacoes'), (key: string, value: any) => {
         if (key === 'data') {
             return new Date(value);
         };
@@ -31,7 +31,7 @@ export class Conta {
         return new Date();
     };
     
-    private getGrupoTransacoes(): GrupoTransacao[] {
+    protected getGrupoTransacoes(): GrupoTransacao[] {
         const gruposTransacoes: GrupoTransacao[] = [];
         const listaTransacoes: Transacao[] = structuredClone(this.transacoes);
         const transacoesOrdenadas: Transacao[] = listaTransacoes.sort((a: Transacao, b: Transacao) => b.data.getTime() - a.data.getTime());
@@ -55,7 +55,7 @@ export class Conta {
         return gruposTransacoes;
         };
     
-    private registrarTransacao(novaTransacao: Transacao): void {
+    protected registrarTransacao(novaTransacao: Transacao): void {
         if (novaTransacao.tipoTransacao === TipoTransacao.DEPOSITO) {
             this.depositar(novaTransacao.valor);
         } else if (novaTransacao.tipoTransacao === TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO) {
@@ -126,6 +126,17 @@ export class Conta {
     };
 };
 
+export class ContaPremium extends Conta {
+    protected registrarTransacao(transacao: Transacao): void {
+        if (transacao.tipoTransacao === TipoTransacao.DEPOSITO) {
+            console.log("ganhou um bônus de 0.50 centavos");
+            transacao.valor += 0.5
+        };
+        super.registrarTransacao(transacao)
+    };
+};
+
 const conta = new Conta('Pedro Victor Braga Mourão');
+const contaPremium = new ContaPremium('Pedro Victor Braga Mourão');
 
 export default conta;
