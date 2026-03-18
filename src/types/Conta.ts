@@ -22,15 +22,15 @@ export class Conta {
         return this.nome;
     };
     
-    getSaldo(): number {
+    public getSaldo(): number {
         return this.saldo;
     };
     
-    getDataAcesso(): Date {
+    public getDataAcesso(): Date {
         return new Date();
     };
     
-    getGrupoTransacoes(): GrupoTransacao[] {
+    private getGrupoTransacoes(): GrupoTransacao[] {
         const gruposTransacoes: GrupoTransacao[] = [];
         const listaTransacoes: Transacao[] = structuredClone(this.transacoes);
         const transacoesOrdenadas: Transacao[] = listaTransacoes.sort((a: Transacao, b: Transacao) => b.data.getTime() - a.data.getTime());
@@ -54,7 +54,7 @@ export class Conta {
         return gruposTransacoes;
         };
     
-    registrarTransacao(novaTransacao: Transacao): void {
+    private registrarTransacao(novaTransacao: Transacao): void {
         if (novaTransacao.tipoTransacao === TipoTransacao.DEPOSITO) {
             this.depositar(novaTransacao.valor);
         } else if (novaTransacao.tipoTransacao === TipoTransacao.TRANSFERENCIA || novaTransacao.tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO) {
@@ -70,7 +70,7 @@ export class Conta {
         return;
     };
     
-    resumirTransacoes(): void {
+    protected resumirTransacoes(): void {
         if (localStorage.getItem('resumoTransacoes')) {
                 localStorage.removeItem('resumoTransacoes');
         };
@@ -102,7 +102,7 @@ export class Conta {
         return;
     };
     
-    depositar(valor: number): void {
+    protected depositar(valor: number): void {
         if (valor <= 0) {
             throw new Error('O valor a ser depositado deve ser maior que zero!');
         }
@@ -112,7 +112,7 @@ export class Conta {
         return;
     };
     
-    debitar(valor: number): void {
+    protected debitar(valor: number): void {
         if (valor <= 0) {
             throw new Error('O valor a ser debitado deve ser maior que zero!');
         } else if (valor > this.saldo) {
